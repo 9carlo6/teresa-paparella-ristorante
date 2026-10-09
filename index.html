@@ -2,9 +2,9 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Teresa Paparella Ristorante - Benevento. Contatti, indirizzo e indicazioni." />
-  <meta name="theme-color" content="#AAD085" />
+  <meta name="theme-color" content="#ADCF82" />
   <title>Teresa Paparella Ristorante | Benevento</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,29 +14,20 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Teresa Paparella Ristorante">
-      <img src="assets/logo-circolare.png" alt="Logo Teresa Paparella" />
-      <span>Teresa Paparella</span>
-    </a>
-
-    <a class="header-link" href="#contatti">Contatti</a>
-  </header>
-
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
-        <img class="hero-logo" src="assets/logo-teresa-paparella.png" alt="Teresa Paparella Ristorante" />
+        <img class="hero-logo intro-blur" src="assets/logo-teresa-paparella.png" alt="Teresa Paparella Ristorante" />
         <h1 id="hero-title" class="sr-only">Teresa Paparella Ristorante</h1>
-        <p class="location">Benevento</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="tel:+393333523236">Chiama</a>
+
+        <div class="hero-actions intro-blur intro-delay">
+          <a class="button button-primary" href="tel:+393333523236">Prenota</a>
           <a class="button button-secondary" href="#mappa">Dove siamo</a>
         </div>
       </div>
     </section>
 
-    <section class="details" id="contatti">
+    <section class="details reveal" id="contatti">
       <div class="section-heading">
         <p class="eyebrow">Contatti</p>
         <h2>Teresa Paparella Ristorante</h2>
@@ -62,7 +53,7 @@
       </div>
     </section>
 
-    <section class="map-section" id="mappa">
+    <section class="map-section reveal" id="mappa">
       <div class="section-heading map-heading">
         <p class="eyebrow">Dove siamo</p>
         <h2>Vico I San Vittorino, 18</h2>
@@ -80,7 +71,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="reveal">
     <img src="assets/logo-circolare.png" alt="" aria-hidden="true" />
     <p>Teresa Paparella Ristorante · Benevento</p>
     <p class="copyright">© <span id="year"></span> Teresa Paparella</p>
@@ -88,6 +79,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => observer.observe(item));
   </script>
 </body>
 </html>
