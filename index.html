@@ -92,48 +92,5 @@
 
     revealItems.forEach((item) => observer.observe(item));
   </script>
-
-  <script>
-    // Paparelle 3D: partono 2 secondi dopo l'apertura della pagina.
-    window.setTimeout(() => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      const layer = document.createElement('div');
-      layer.className = 'duck-rain';
-      layer.setAttribute('aria-hidden', 'true');
-      document.body.appendChild(layer);
-
-      const duckCount = window.innerWidth < 700 ? 10 : 16;
-
-      for (let i = 0; i < duckCount; i++) {
-        const duck = document.createElement('div');
-        duck.className = 'duck';
-
-        const size = window.innerWidth < 700
-          ? 38 + Math.random() * 22
-          : 48 + Math.random() * 42;
-
-        duck.style.setProperty('--left', `${Math.random() * 94 + 2}%`);
-        duck.style.setProperty('--size', `${size}px`);
-        duck.style.setProperty('--drift', `${(Math.random() - 0.5) * 180}px`);
-        duck.style.setProperty('--spin', `${(Math.random() - 0.5) * 35}deg`);
-        duck.style.setProperty('--delay', `${Math.random() * 1.35}s`);
-        duck.style.setProperty('--duration', `${5.2 + Math.random() * 2.2}s`);
-
-        duck.innerHTML = `
-          <span class="duck-body"></span>
-          <span class="duck-wing"></span>
-          <span class="duck-head"></span>
-          <span class="duck-eye"></span>
-          <span class="duck-beak"></span>
-        `;
-
-        layer.appendChild(duck);
-      }
-
-      window.setTimeout(() => layer.remove(), 10500);
-    }, 2000);
-  </script>
-
 </body>
 </html>
