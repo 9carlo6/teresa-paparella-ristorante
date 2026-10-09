@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Teresa Paparella Ristorante - Benevento. Contatti, indirizzo e indicazioni." />
+  <meta name="theme-color" content="#AAD085" />
+  <title>Teresa Paparella Ristorante | Benevento</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo-circolare.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Teresa Paparella Ristorante">
+      <img src="assets/logo-circolare.png" alt="Logo Teresa Paparella" />
+      <span>Teresa Paparella</span>
+    </a>
+
+    <a class="header-link" href="#contatti">Contatti</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <img class="hero-logo" src="assets/logo-teresa-paparella.png" alt="Teresa Paparella Ristorante" />
+        <h1 id="hero-title" class="sr-only">Teresa Paparella Ristorante</h1>
+        <p class="location">Benevento</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="tel:+393333523236">Chiama</a>
+          <a class="button button-secondary" href="#mappa">Dove siamo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="details" id="contatti">
+      <div class="section-heading">
+        <p class="eyebrow">Contatti</p>
+        <h2>Teresa Paparella Ristorante</h2>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <p class="label">Indirizzo</p>
+          <p>Vico I San Vittorino, 18<br />82100 Benevento BN</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Vico%20I%20San%20Vittorino%2018%2C%20Benevento" target="_blank" rel="noopener noreferrer">Apri in Google Maps</a>
+        </article>
+
+        <article class="info-card">
+          <p class="label">Telefono</p>
+          <p><a class="plain-link" href="tel:+393333523236">333 352 3236</a></p>
+          <p><a class="plain-link" href="tel:+390824605319">0824 605319</a></p>
+        </article>
+
+        <article class="info-card">
+          <p class="label">Email</p>
+          <p><a class="plain-link email-link" href="mailto:teresapaparellabenevento@gmail.com">teresapaparellabenevento@gmail.com</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="map-section" id="mappa">
+      <div class="section-heading map-heading">
+        <p class="eyebrow">Dove siamo</p>
+        <h2>Vico I San Vittorino, 18</h2>
+      </div>
+
+      <div class="map-frame">
+        <iframe
+          title="Mappa Teresa Paparella Ristorante"
+          src="https://www.google.com/maps?q=Vico%20I%20San%20Vittorino%2018%2C%2082100%20Benevento%20BN&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/logo-circolare.png" alt="" aria-hidden="true" />
+    <p>Teresa Paparella Ristorante · Benevento</p>
+    <p class="copyright">© <span id="year"></span> Teresa Paparella</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
